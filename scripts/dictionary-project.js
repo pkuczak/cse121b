@@ -1,5 +1,5 @@
 // import module with other functions
-import * as utilities from './utilities.js'
+import { displayWordInfo } from './utilities.js'
 
 // Global variables
 const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
@@ -14,7 +14,7 @@ const searchWord = async () => {
     }
     console.log(wordInfo);
 
-    utilities.displayWordInfo(wordInfo, inputWord);
+    displayWordInfo(wordInfo, inputWord);
 };
 
 // Add event listener
