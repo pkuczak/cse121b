@@ -5,7 +5,7 @@ const reset = () => {
     result.innerHTML = '';
 };
 
-// Build and Display the parts of the dictionary
+// Display the parts of the dictionary
 export function displayWordInfo(wordInfo, inputWord) {
     reset();
 
@@ -15,11 +15,13 @@ export function displayWordInfo(wordInfo, inputWord) {
     result.appendChild(createExample(wordInfo));
 };
 
+// Error handling
 export function displayError() {
     let errorMessage = "Couldn't Find The Word";
     result.innerHTML = `<br><h3 class="error">${errorMessage}</h3>`;
 };
 
+// Build the parts of the dictionary
 function createExample(wordInfo) {
     let examplePara = document.createElement("p")
     examplePara.class = "word-example";
