@@ -1,5 +1,5 @@
 // import module with other functions
-import { displayWordInfo } from './utilities.js'
+import { displayWordInfo, displayError } from './utilities.js'
 
 // Global variables
 const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
@@ -11,10 +11,11 @@ const searchWord = async () => {
     const response = await fetch(`${url}${inputWord}`);
     if (response.ok) {
         wordInfo = await response.json();
+        console.log(wordInfo);
+        displayWordInfo(wordInfo, inputWord);
+    } else {
+        displayError();
     }
-    console.log(wordInfo);
-
-    displayWordInfo(wordInfo, inputWord);
 };
 
 // Add event listener
